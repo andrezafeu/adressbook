@@ -1,13 +1,17 @@
+<% if flash[:alert] %>
+  <%= flash[:alert] %>
+<%end%>
+
 <h1>Add a new contact</h1>
 
 <form action="/contacts" method="POST"> 
   <div>
-    <label for="contact_name">Name</label>
+    <label for="contact_name">Name*</label>
     <input type="text" name="contact[name]" id="contact_name">
   </div>
 
   <div>
-    <label for="contact_address">Address</label>
+    <label for="contact_address">Address*</label>
     <textarea name="contact[address]" id="contact_address"></textarea>
   </div>
 

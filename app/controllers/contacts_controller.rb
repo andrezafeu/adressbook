@@ -13,10 +13,16 @@ class ContactsController < ApplicationController
 			:phone => params[:contact][:phone],
 			:email => params[:contact][:email]
 			)
-		contact.save
+		if !contact[:name].blank? and !contact[:address].blank?
+			contact.save
+			redirect_to("/contacts")
+		else
+			flash[:alert] = "Please fill out the name and address of the contact"
+			render '/contacts/new'	
+		end
 		# Render contact's attributes
 		# render(:text => contact.attributes)
-		redirect_to("/contacts")
+		
 	end
 	def show
 		contact_id = params[:id]
