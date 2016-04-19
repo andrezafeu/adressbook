@@ -18,4 +18,8 @@ class ContactsController < ApplicationController
 		# render(:text => contact.attributes)
 		redirect_to("/contacts")
 	end
+	def show
+		contact_id = params[:id]
+		@contact = Contact.find_by(id: contact_id)
+	end
 end

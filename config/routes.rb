@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   post '/contacts', to: 'contacts#create'
 
-  get '/contacts/show', to 'contacts#show'
+  get '/contacts/:id', to: 'contacts#show', as: :show
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
