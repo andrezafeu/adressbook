@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/contacts', to: 'contacts#index', as: :contacts
+  get '/contacts', to: 'contacts#index'
 
   get '/contacts/new', to: 'contacts#new', as: :new
 
