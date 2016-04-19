@@ -3,4 +3,6 @@ class ContactsController < ApplicationController
 		@contacts = Contact.all
 		render 'index'
 	end
+	def new
+	end
 end
