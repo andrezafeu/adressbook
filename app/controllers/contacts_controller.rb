@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
 			:phone => params[:contact][:phone],
 			:email => params[:contact][:email]
 			)
+		contact.save
 		# Render contact's attributes
 		render(:text => contact.attributes)
 	end
